@@ -1,0 +1,192 @@
+      * {
+                margin: 0;
+                padding: 0;
+            }
+            html {
+                height:100%;
+            }
+         body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: url('./images/tile-design.jpeg');
+    background-size: 150%;
+    background-position: left;
+              
+            }
+            .wrapper {
+                flex:1;
+            }
+            .main-header {
+                background-color: white;
+                height: 70px;
+                width: 70%;
+                padding: 5px 15%;
+            }
+            .main-header h1 {
+                line-height: 50px;
+                text-align: center;
+            
+            }
+            .footer {
+                height: 50px;
+                background-color: white;
+            }
+            span.logo {
+                color: blue;
+            }
+            .copyright {
+                color: red;
+                font-weight: bold;
+                width: 100%;
+                text-align: center;
+                padding: 15px 0;
+            }
+            
+            .content-top {
+                height: 180px;
+                background-color: transparent;
+                margin: 10px 0;
+            }
+
+            .content-bio {
+                position: relative;
+                background-color: white;
+                width: 70%;
+                max-width:980px;
+                height: 180px;
+                margin: 0 auto;
+                color: black;
+            }
+            .content-bio img {
+                width: 150px;
+                height: 170px;
+                margin: 5px 15px 5px 5px;
+            }
+            .bio-text {
+                position: absolute;
+                top: 5px;
+                left: 170px;
+            }
+            .content-bottom {
+                overflow: auto;
+                width: 70%;
+                max-width: 980px;
+                position: relative;
+                margin: 0 auto;
+            }
+            .sidebar {
+                float: left;
+                background-color: white;
+                width: 25%;
+                height: 500px;
+            }
+
+            .main-content {
+                float: right;
+                background-color: white;
+                width: 71%;
+                height: 500px;
+                padding: 0 2% 0 2%;
+            }
+            .sidebar-links {
+                background-color: firebrick;
+            }
+            .sidebar-links li {
+                width: 100%;
+                height: 30px;
+                border: 10px solid white;
+            }
+            .sidebar-links a {
+                color: black;
+                display: block;
+                padding: 7px;
+                text-decoration: none;
+                transition-duration: 0.7s;
+            }
+            .sidebar-links a:hover {
+                background-color: darkred;
+                color: #000;
+            }
+			.gallery h1 {
+				margin: 30px 0 15px 0;
+			}
+			.gallery ul {
+				list-style-type:none;
+				text-align: center;
+				margin-top: 20px;
+			}
+			.gallery li {
+				margin-right:10px;
+				display:inline;
+			}
+			.gallery img {
+				width:125px;
+				height:100px;
+			}
+            section.one-column {
+                margin-top:30px;
+            }
+            article.main-content.one-column {
+                width:100%;
+                padding:0;
+                background-color:transparent;
+            }
+            div.login-form {
+                padding:20px;
+                width:300px;
+                height:250px;
+                background-color: red;
+                margin:90px auto 0;
+                border-radius:50px;
+                color: white;
+            }
+            input.login-input {
+                width:100%;
+                padding:5px 2px;
+                border-radius:5px;
+                margin:7px 0;
+            }
+            h1.login-h1 {
+                margin-bottom:15px;
+            }
+            button.login-button {
+                padding:5px 15px;
+                border-radius:7px;
+                background-color:red;
+                color:#FFF;
+            }
+            p.error-message{
+                display:none;
+                margin-top:10px;
+                padding:5px;
+                width:100%;
+                color:#FFF;
+                background-color:orangered;
+                border:1px solid yellow;
+                border-radius:5px;
+            }
+            div.login-page { 
+                background-size:cover;
+            }
+            /*
+            div.non-login-page {
+                background-image: url(../images/gallery/black.jpg);
+            }*/
+            .logo img {
+                width: 400px;
+                height: 71px;
+            }
+            img.main-logo {
+                margin-top:0;
+                float: left;
+                height:100px;
+            }
+            .searchbar {
+                float: right;
+                margin:50px auto;
+                }
+            .about h1, p {
+                color: black;
+                margin: 15px 0 10px 0;
+            }

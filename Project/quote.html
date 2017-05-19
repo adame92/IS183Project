@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <title>No Regretz Tile - Produce a Quote</title>
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <style>
+        * {
+             margin: 0;
+             padding: 0;
+         }
+         html {
+             height: 100%;
+         }
+         body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-image: url('./images/tile-design.jpeg');
+    background-size: 150%;
+    background-position: left;
+}
+
+         .wrapper {
+                flex:1;
+            }
+        .main-header {
+                background-color: white;
+                height: 70px;
+                width: 70%;
+                padding: 5px 15%;
+            }
+            .main-header img {
+        float: left;
+        width: auto;
+        height: 45px;
+    }
+
+    .main-header h1 {
+        float: left;
+        line-height: 50 px;
+        color: black;
+        padding-left: 10px;
+    }
+
+        .footer {
+            height: 50px;
+            background-color: white;
+        }
+        .copyright {
+            color: red;
+            font-weight: bold;
+            width: 100%;
+            text-align: center;
+            padding: 15px 0;
+        }
+        .main-content {
+            float: right;
+            background-color: white;
+            width: 71%;
+            height: 500px;
+            padding: 0 2% 0 2%;
+        }
+        section.three-column {
+            margin-top:30px;
+        }
+        aside.three-column {
+            width:15%;
+        }
+        aside.sidebar-right {
+            width:21%;
+            background-color:#CCC;
+            height:100%;
+            float:right;
+            min-height:480px;
+            padding:1%;
+        }
+        .content-bottom {
+            overflow: auto;
+            width: 70%;
+            max-width: 980px;
+            position: relative;
+            margin: 0 auto;
+        }
+        article.three-column-content {
+            width:75%;
+            position:absolute;
+            left:15%;
+            float:none;
+        }
+        table.courses-table {
+            width:100%;
+        }
+        table.courses-table tr {
+            padding:3px 5px;
+            background-color:ghostwhite;
+            border:1px solid #CCC;
+            transition-duration:0.7s;
+        }
+        .sidebar {
+            float: left;
+            background-color: white;
+            width: 25%;
+            height: 500px;
+            border: white;
+        }
+        .sidebar-links {
+            background-color: firebrick;
+        }
+        .sidebar-links li {
+            width: 100%;
+            height: 30px;
+            border: 10px solid white;
+        }
+        .sidebar-links a {
+            color: black;
+            display: block;
+            padding: 7px;
+            text-decoration: none;
+            transition-duration: 0.7s;
+        }
+        .sidebar-links a:hover {
+            background-color: darkred;
+            color: #000;
+        }
+        .Info {
+            color: red;
+            height: 100%;
+        }
+	    .box1 {
+            position: absolute;
+            left: 165px;
+	    }
+        .box2 {
+            position: absolute;
+            right: 70px;
+        }
+        .Calc {
+            position: absolute;
+            left: 305px;
+            bottom: 200px;  
+        }
+        .Clear {
+            position: absolute;
+            left: 405px;
+            bottom: 200px;
+        }
+        .Print {
+            position: absolute;
+            left: 505px;
+            bottom: 200px;
+        }
+    </style>
+    </head>
+
+    <body>
+        <div class="wrapper">
+            <header class="main-header">    
+                <img src="./images/logo2.jpg" alt="logo2" title="logo2">
+                <h1>Produce Quote</h1>         
+            </header>
+		</div>
+			<section class="content-bottom three-column">
+                <aside class="sidebar three-column">
+                    <ul class="sidebar-links">
+                        <li><a href="./home.html" target="_blank">Home</a></li>
+                        <li><a href="./jobs.html" target="_blank">Previous Jobs</a></li>
+				    	<li><a href="./contact.html" target="_blank">Contact Us</a></li>
+				    	<li><a href="./quote.html" target="_blank" >Produce a Quote</a></li>
+                    </ul>
+                </aside>
+                <article class="main-content three-column-content">
+                    <div class="contact-form">
+                            <form id="frm" action="/quote" method="GET">
+                            <fieldset class="Info">
+                                <legend><strong>Produce a Quote:</strong></legend>
+                                Type of Job:
+                                    <select class="box1" id="type-job" onchange="dis_able()">
+                                        <option value="Tile">Tile
+                                        <option value="Granite">Granite
+                                    </select>
+                                    <br><br>
+                                Length:
+                                 <input class="box1" type="text" id="L"><br><br>
+                                Width:
+                                <input class="box1" type="text" id="W"><br><br>
+                                Square ft Charge ($):
+                                <input class="box1" type="text" id="Sq" value="3.50">
+                                <br><br>
+                                Cuts & Breakage (%):
+                                <input class="box1" type="text" id="dis1" value="1.20">
+                                <br><br>
+                                Labor Charge ($):
+								<input class="box1" type="text" id="dis2" $ value="4.50"><br><br>
+                                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                                Total:&emsp;
+                                <input class="box3" type="text" name="sum" id="total" value="0.00"><br><br><br><br>
+                                <input class="Calc" type="button" value="Calculate" onclick="Cal()">
+								<input class="Clear" type="button" value="Clear" onclick="Clr()">
+								<input class="Print" type="button" value="Print" onclick="Prt()">
+
+                            </fieldset>
+                        </form>
+                    </div>
+                   
+                </article>
+            </section>
+            
+        </div>
+        <footer class="footer box-shadow">
+            <p class="copyright">
+                (c) No Regretz Tile
+            </p>
+        </footer>
+
+<script>
+    function dis_able() {
+        var x = document.getElementById("type-job").value;
+        if(x = "Granite") {
+            
+            document.getElementById("dis1").disabled = true;
+            document.getElementById("dis1").value = "1";
+            
+            document.getElementById("dis2").disabled = true;
+            document.getElementById("dis2").value = "0";
+            
+            document.getElementById("Sq").value = "40";
+        }
+    }
+    function Cal() {       
+            var Length = document.getElementById("L").value;
+            var Width = document.getElementById("W").value;
+            var Square = document.getElementById("Sq").value;
+            var Cuts = document.getElementById("dis1").value;
+            var Labor = document.getElementById("dis2").value;       
+
+            var Charge = parseFloat(Square) + parseFloat(Labor);
+
+            var Total = Length * Width * Charge * Cuts;
+
+
+            document.getElementById("total").value = "$" + Total;
+    }
+    function Clr() {
+        document.getElementById("frm").reset();
+        document.getElementById("dis1").disabled = false;
+        document.getElementById("dis2").disabled = false;
+    }
+    function Prt() {
+
+    }
+</script>
+</body>
+</html>

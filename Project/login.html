@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <style>
+     * {
+            margin: 0;
+            padding: 0;
+        }
+    html, body {
+            height:100%;
+        }
+    body {
+            min-height:100%;
+            display:flex;
+            flex-direction:column;    
+        }
+    .main-content {
+            float: right;
+            background-color: white;
+            width: 71%;
+            height: 500px;
+            padding: 0 2% 0 2%;
+        }
+     .wrapper {
+                flex:1;
+            }
+     section.one-column {
+                margin-top:30px;
+            }
+    article.main-content.one-column {
+                width:100%;
+                padding:0;
+                background-color:transparent;
+            }
+    div.login-form {
+                padding:20px;
+                width:300px;
+                height:250px;
+                background-color: slategray;
+                margin:90px auto 0;
+                border-radius:50px;
+                color: white;
+            }
+            input.login-input {
+                width:100%;
+                padding:5px 2px;
+                border-radius:5px;
+                margin:7px 0;
+            }
+            h1.login-h1 {
+                margin-bottom:15px;
+            }
+            button.login-button {
+                padding:5px 15px;
+                border-radius:7px;
+                background-color:slategray;
+                color:#FFF;
+            }
+                .copyright {
+                color: gray;
+                font-weight: bold;
+                width: 100%;
+                text-align: center;
+                padding: 15px 0;
+            }
+        .footer {
+                height: 50px;
+                background-color: white;
+            }.main-header h1 {
+        float: left;
+        line-height: 50 px;
+        color: black;
+        padding-left: 10px;
+        position: absolute;
+    left: 520px;
+    }
+    </style>
+</head>
+<body>
+    <div class="wrapper login-page">
+        <header class = "main-header">
+            <h1>No Regretz Tile</h1>
+        </header>
+        <section class="content-bottom one-column">
+            <article class="main-content one-column">
+                <div class="login-form">
+                    <h1 class="login-h1">Login</h1>
+                    <label for="username">Username</label>
+                    <input class="login-input" type="text" id="username">
+                    <label for="password">Password</label>
+                    <input class="login-input" type="password" id="password">
+                    <button onclick="login()" id="btn-login" class="login-button">Login</button>
+                    <div id="error-container">
+                        <p id="error-text" class="error-message"></p>
+                    </div>
+                    
+                </div>
+            </article>
+        </section>
+    </div>
+    <footer class="footer box-shadow">
+        <p class="copyright">
+            (c) No Regretz Tile
+        </p>
+    </footer>
+
+    <script>
+        function login() {
+
+            
+            let username = document.getElementById('username').value;
+            let password = document.getElementById('password').value;
+            let errorContainer = document.getElementById('error-container');
+            let errorText = document.getElementById('error-text');
+
+            if(username == 'username' && password == 'password') {
+                location.href = './quote.html';
+            } else {
+                errorContainer.style.display = 'block';
+                errorText.style.display = 'block';
+                errorText.innerHTML = 'Error please try again...';
+
+               let handle = setInterval(() => {
+                    errorContainer.style.display = 'none';
+                    clearInterval(handle);
+                },2000);
+            }
+
+
+            //alert(password);
+        }
+    </script>
+</body>
+</html>
